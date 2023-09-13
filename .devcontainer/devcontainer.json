@@ -1,0 +1,19 @@
+{
+    // "workspace" という名前のリモート開発環境の設定を示す
+    "name": "spring-boot-ddd",
+
+    // 使用される Docker Compose ファイルのリスト。この場合は "docker-compose.yml" というファイルを使用
+    "dockerComposeFile": ["docker-compose.yml"],
+
+    // "workspace" という名前のサービスを Docker Compose で実行
+    "service": "workspace",
+
+    // コンテナ内の VS Code のワークスペースのディレクトリを示す
+    "workspaceFolder": "/home/kyoto_kanko/workspace",
+
+    // コンテナ内のリモートユーザー名。この場合は "vscode" というユーザーを使用
+    "remoteUser": "kyoto_kanko",
+
+    // このリモート環境をシャットダウンする際のアクション。"stopCompose" は Docker Compose を停止することを示す
+    "shutdownAction": "stopCompose"
+}
