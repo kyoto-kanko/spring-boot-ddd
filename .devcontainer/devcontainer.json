@@ -15,5 +15,42 @@
     "remoteUser": "kyoto_kanko",
 
     // このリモート環境をシャットダウンする際のアクション。"stopCompose" は Docker Compose を停止することを示す
-    "shutdownAction": "stopCompose"
+    "shutdownAction": "stopCompose",
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "breadcrumbs.enabled": true,
+                "editor.accessibilitySupport": "off",
+                "editor.bracketPairColorization.enabled": true,
+                "editor.cursorBlinking": "smooth",
+                "editor.renderLineHighlight": "all",
+                "editor.stickyScroll.enabled": true,
+                "files.autoSave": "onFocusChange",
+                "files.insertFinalNewline": true,
+                "files.trimFinalNewlines": true,
+                "files.trimTrailingWhitespace": true,
+                "window.zoomLevel": 1,
+                "workbench.editor.enablePreview": false,
+                "workbench.editor.untitled.hint": "hidden",
+                "workbench.iconTheme": "vscode-icons",
+                "workbench.reduceMotion": "on",
+                "workbench.startupEditor": "none"
+            },
+            "extensions": [
+				"GitHub.copilot",
+				"streetsidesoftware.code-spell-checker",
+				"vscjava.vscode-gradle",
+				"oderwat.indent-rainbow",
+				"mosapride.zenkaku",
+				"vscjava.vscode-lombok",
+				"MS-CEINTL.vscode-language-pack-ja",
+				"eamodio.gitlens",
+				"vscjava.vscode-java-pack",
+				"vscjava.vscode-spring-initializr",
+				"vmware.vscode-spring-boot",
+				"vscjava.vscode-spring-boot-dashboard"
+			]
+        }
+    }
 }
