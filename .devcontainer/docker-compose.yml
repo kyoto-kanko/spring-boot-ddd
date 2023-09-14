@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  workspace:
+    container_name: spring-boot-ddd
+    build:
+      context: ./
+    tty: true
+    volumes:
+      - ../:/home/kyoto_kanko/workspace:cached
