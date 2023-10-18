@@ -15,6 +15,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     public List<User> findAll() {
+        var test_val = "test";
         return userRepository.findAll();
     }
 
