@@ -1,0 +1,29 @@
+name: Check Camel Case in Diff
+
+on: [push]
+
+jobs:
+  check-camel-case:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Check Camel Case in Java Files Diff
+      run: |
+        # 最後のコミットとの差分を取得
+        DIFF=$(git diff HEAD^ --name-only -- '*.java')
+
+        # 差分があるファイルごとにキャメルケースのチェックを行う
+        for FILE in $DIFF; do
+          if grep -E 'function [a-z]+_[a-z]+' "$FILE" || grep -E 'var [a-z]+_[a-z]+' "$FILE"; then
+            echo "Non-camel case method or variable name detected in $FILE!"
+            exit 1
+          fi
+        done
